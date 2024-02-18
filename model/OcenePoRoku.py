@@ -29,7 +29,7 @@ class OcenePoRoku:
 
     def __init__(self, kljuc: Key, predmeti: "Predmeti"):
         self.kljuc = kljuc
-        self.ocene = OrderedDict()  # Preserve insertion order
+        self.ocene = OrderedDict()
         for predmet in predmeti.get_all():
             self.ocene[predmet] = 0
 
