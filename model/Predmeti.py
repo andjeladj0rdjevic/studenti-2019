@@ -5,9 +5,9 @@ class Predmeti:
         if not predmeti:
             raise ValueError("Predmeti cannot be null or empty")
 
-        self.predmet_per_name = OrderedDict()  # Preserve insertion order
+        self.predmet_per_name = OrderedDict()
         for p in predmeti:
-            self.predmet_per_name[p.naziv.lower()] = p  # Case-insensitive mapping
+            self.predmet_per_name[p.naziv.lower()] = p
 
     def get_nr_of_predmeti(self):
         return len(self.predmet_per_name)
