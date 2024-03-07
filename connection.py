@@ -6,4 +6,9 @@ mydb = mysql.connector.connect(
 	password = "Andjela.2023"
 )
 
-print(mydb)
+cursor = mydb.cursor()
+ 
+cursor.execute("USE studenti;")
+
+for x in cursor:
+  print(x)
