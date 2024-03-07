@@ -1,14 +1,7 @@
 ﻿use studenti;
 select * from student_ispit_predmet_ispitni_rok where vremePismenog >='2019-12-01' order by vremepismenog asc;
 
-select count(*), ye, mo
-from(
-select year(vremePismenog) as ye, month(vremePismenog)  as mo
-from student_ispit_predmet_ispitni_rok 
-where vremePismenog >='2019-12-01' 
-) as tmpp
-group by ye, mo
-order by mo, ye; 
+select count(*), ye, mo from( select year(vremePismenog) as ye, month(vremePismenog)  as mo from student_ispit_predmet_ispitni_rok where vremePismenog >='2019-12-01' ) as tmpp group by ye, mo order by mo, ye; 
 
 --
 select count(*) as cnt, group_concat(stanje order by validan separator ', '), group_concat(ocena separator ', '), idstudent, IDpredmeta
